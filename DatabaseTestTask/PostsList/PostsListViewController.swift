@@ -8,21 +8,66 @@
 import UIKit
 
 final class PostsListViewController: UIViewController {
+    
+    // MARK: - Private Properties
+    
+    private lazy var mainView = PostsListView()
+    
+    private var viewModel: PostsListViewModelProtocol! {
+        didSet {
+            viewModel.fetchPosts { [weak self] in
+                guard let self = self else { return }
+                self.mainView.tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        view = mainView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        viewModel = PostsListViewModel()
+        setupTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private Methods
+    
+    private func setupTableView() {
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
-    */
 
+}
+
+// MARK: - UITable View Data Source
+
+extension PostsListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let cell: PostsListCell = tableView.dequeueCell(for: indexPath)
+        cell.viewModel = viewModel.cellViewModel(at: indexPath)
+         
+        return cell
+    }
+    
+    
+}
+
+// MARK: - UITable View Delegate
+
+extension PostsListViewController: UITableViewDelegate {
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//
+//        UITableView.automaticDimension
+//    }
 }

@@ -1,5 +1,5 @@
 //
-//  DataBaseManager.swift
+//  DatabaseManager.swift
 //  DatabaseTestTask
 //
 //  Created by Ivan on 01.06.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DataBaseManager {
+final class DatabaseManager {
     
     // MARK: - Private Properties
     
