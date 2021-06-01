@@ -17,8 +17,7 @@ final class RequestService: RequestServiceProtocol {
     
     // MARK: - Public Properties
     
-    var pageNumber: Int = 1
-    
+    private(set) var pageNumber: Int = 1
     
     // MARK: - Public Methods
     

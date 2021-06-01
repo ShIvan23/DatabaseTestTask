@@ -77,10 +77,7 @@ extension DetailPostViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
-
 
 // MARK: - UITable View Delegate
 

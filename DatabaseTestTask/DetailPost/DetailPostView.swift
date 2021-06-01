@@ -16,7 +16,7 @@ final class DetailPostView: UIView {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 25)
         return label
     }()
     

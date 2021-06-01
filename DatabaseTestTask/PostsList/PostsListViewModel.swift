@@ -21,7 +21,7 @@ final class PostsListViewModel: PostsListViewModelProtocol {
     
     var postsArray = [Post]()
     
-    // MARK: - Private Methods
+    // MARK: - Private Properties
     
     private let databaseManager = DatabaseManager()
     

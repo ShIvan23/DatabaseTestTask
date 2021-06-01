@@ -58,8 +58,6 @@ extension PostsListViewController: UITableViewDataSource {
          
         return cell
     }
-    
-    
 }
 
 // MARK: - UITable View Delegate

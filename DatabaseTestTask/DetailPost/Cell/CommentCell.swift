@@ -24,6 +24,8 @@ final class CommentCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 18)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,12 +33,16 @@ final class CommentCell: UITableViewCell {
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let bodyLabel: UILabel = {
         let label = UILabel()
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

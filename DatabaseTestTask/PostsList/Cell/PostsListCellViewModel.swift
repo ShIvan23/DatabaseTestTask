@@ -34,6 +34,4 @@ final class PostsListCellViewModel: PostsListCellViewModelProtocol {
     init(post: Post) {
         self.post = post
     }
-    
-    
 }
