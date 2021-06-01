@@ -12,6 +12,7 @@ protocol PostsListViewModelProtocol {
     func fetchPosts(completion: @escaping () -> Void)
     func numberOfRows() -> Int
     func cellViewModel(at indexPath: IndexPath) -> PostsListCellViewModelProtocol
+    func viewModelForSelectedRow(at indexPath: IndexPath) -> DetailPostViewModelProtocol
 }
 
 final class PostsListViewModel: PostsListViewModelProtocol {
@@ -52,5 +53,10 @@ final class PostsListViewModel: PostsListViewModelProtocol {
         return PostsListCellViewModel(post: post)
     }
     
+    func viewModelForSelectedRow(at indexPath: IndexPath) -> DetailPostViewModelProtocol {
+       
+        let post = postsArray[indexPath.row]
+        return DetailPostViewModel(post: post)
+    }
     
 }

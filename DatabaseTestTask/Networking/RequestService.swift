@@ -10,6 +10,7 @@ import Foundation
 protocol RequestServiceProtocol {
     var pageNumber: Int { get }
     func postsRequest() -> URLRequest?
+    func commentsRequest(id: Int) -> URLRequest?
 }
 
 final class RequestService: RequestServiceProtocol {
@@ -24,10 +25,13 @@ final class RequestService: RequestServiceProtocol {
     func postsRequest() -> URLRequest? {
         
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts?_page=\(pageNumber)") else { return nil }
-       
         pageNumber += 1
-        
         return URLRequest(url: url)
+    }
+    
+    func commentsRequest(id: Int) -> URLRequest? {
         
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(id)/comments") else { return nil }
+        return URLRequest(url: url)
     }
 }

@@ -21,4 +21,10 @@ final class DatabaseManager {
         guard let request = requestService.postsRequest() else { return }
         dataTaskService.fetch(request: request, completionHandler: completion)
     }
+    
+    public func fetchComments(id: Int, completion: @escaping (Result<[Comment], Error>) -> Void) {
+        
+        guard let request = requestService.commentsRequest(id: id) else { return }
+        dataTaskService.fetch(request: request, completionHandler: completion)
+    }
 }

@@ -66,8 +66,11 @@ extension PostsListViewController: UITableViewDataSource {
 
 extension PostsListViewController: UITableViewDelegate {
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        UITableView.automaticDimension
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailViewModel = viewModel.viewModelForSelectedRow(at: indexPath)
+        let detailViewController = DetailPostViewController(viewModel: detailViewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }

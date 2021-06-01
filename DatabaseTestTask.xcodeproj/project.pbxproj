@@ -23,6 +23,10 @@
 		2CB6A8A62666677300E70C76 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8A52666677300E70C76 /* UIView+Extension.swift */; };
 		2CB6A8A92666771700E70C76 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8A82666771700E70C76 /* DetailPostViewController.swift */; };
 		2CB6A8AB2666772600E70C76 /* DetailPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8AA2666772600E70C76 /* DetailPostViewModel.swift */; };
+		2CB6A8AD2666849200E70C76 /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8AC2666849200E70C76 /* DetailPostView.swift */; };
+		2CB6A8AF2666893E00E70C76 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8AE2666893E00E70C76 /* Comment.swift */; };
+		2CB6A8B226668B2200E70C76 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8B126668B2200E70C76 /* CommentCell.swift */; };
+		2CB6A8B426668B2E00E70C76 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6A8B326668B2E00E70C76 /* CommentCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		2CB6A8A52666677300E70C76 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		2CB6A8A82666771700E70C76 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		2CB6A8AA2666772600E70C76 /* DetailPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewModel.swift; sourceTree = "<group>"; };
+		2CB6A8AC2666849200E70C76 /* DetailPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostView.swift; sourceTree = "<group>"; };
+		2CB6A8AE2666893E00E70C76 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		2CB6A8B126668B2200E70C76 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		2CB6A8B326668B2E00E70C76 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 				2CB6A8A7266676E800E70C76 /* DetailPost */,
 				2CB6A89026664D3600E70C76 /* Managers */,
 				2CB6A88B2666457A00E70C76 /* Networking */,
+				2CB6A89326664DD500E70C76 /* Model */,
 				2CB6A8A2266666FD00E70C76 /* Extensions */,
 				2CB6A8802666402200E70C76 /* Assets.xcassets */,
 				2CB6A8822666402200E70C76 /* LaunchScreen.storyboard */,
@@ -94,7 +103,6 @@
 			children = (
 				2CB6A88C266645BD00E70C76 /* DataTaskService.swift */,
 				2CB6A88E26664A6600E70C76 /* RequestService.swift */,
-				2CB6A89326664DD500E70C76 /* Model */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2CB6A89426664E4800E70C76 /* Post.swift */,
+				2CB6A8AE2666893E00E70C76 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,9 +157,20 @@
 			isa = PBXGroup;
 			children = (
 				2CB6A8A82666771700E70C76 /* DetailPostViewController.swift */,
+				2CB6A8AC2666849200E70C76 /* DetailPostView.swift */,
 				2CB6A8AA2666772600E70C76 /* DetailPostViewModel.swift */,
+				2CB6A8B026668AEC00E70C76 /* Cell */,
 			);
 			path = DetailPost;
+			sourceTree = "<group>";
+		};
+		2CB6A8B026668AEC00E70C76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CB6A8B126668B2200E70C76 /* CommentCell.swift */,
+				2CB6A8B326668B2E00E70C76 /* CommentCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +250,12 @@
 				2CB6A8AB2666772600E70C76 /* DetailPostViewModel.swift in Sources */,
 				2CB6A8782666401C00E70C76 /* AppDelegate.swift in Sources */,
 				2CB6A8A62666677300E70C76 /* UIView+Extension.swift in Sources */,
+				2CB6A8AD2666849200E70C76 /* DetailPostView.swift in Sources */,
+				2CB6A8B226668B2200E70C76 /* CommentCell.swift in Sources */,
+				2CB6A8B426668B2E00E70C76 /* CommentCellViewModel.swift in Sources */,
 				2CB6A89526664E4900E70C76 /* Post.swift in Sources */,
 				2CB6A89A266653E000E70C76 /* PostsListViewModel.swift in Sources */,
+				2CB6A8AF2666893E00E70C76 /* Comment.swift in Sources */,
 				2CB6A898266653CB00E70C76 /* PostsListViewController.swift in Sources */,
 				2CB6A88D266645BD00E70C76 /* DataTaskService.swift in Sources */,
 				2CB6A8A92666771700E70C76 /* DetailPostViewController.swift in Sources */,
