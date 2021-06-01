@@ -58,6 +58,7 @@ final class DetailPostViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        title = "Detail Post"
         mainView.titleLabel.text = viewModel.title
         mainView.bodyLabel.text = viewModel.body
     }

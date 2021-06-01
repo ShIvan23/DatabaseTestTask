@@ -19,7 +19,7 @@ final class PostsListViewModel: PostsListViewModelProtocol {
     
     // MARK: - Public Properties
     
-    var postsArray = [Post]()
+    private(set) var postsArray = [Post]()
     
     // MARK: - Private Properties
     
@@ -33,7 +33,7 @@ final class PostsListViewModel: PostsListViewModelProtocol {
             
             switch result {
             case .success(let posts):
-                self.postsArray = posts
+                self.postsArray.append(contentsOf: posts)
                 completion()
                 
             case .failure(let error):

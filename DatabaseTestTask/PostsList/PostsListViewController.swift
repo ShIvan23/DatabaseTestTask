@@ -33,6 +33,7 @@ final class PostsListViewController: UIViewController {
 
         viewModel = PostsListViewModel()
         setupTableView()
+        title = "Posts List"
     }
     
     // MARK: - Private Methods
@@ -42,11 +43,22 @@ final class PostsListViewController: UIViewController {
         mainView.tableView.dataSource = self
     }
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard scrollView == mainView.tableView,
+              (scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height else { return }
+        
+        viewModel.fetchPosts { [weak self] in
+            guard let self = self else { return }
+            
+            self.mainView.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITable View Data Source
 
 extension PostsListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows()
     }
